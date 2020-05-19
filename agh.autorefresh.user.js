@@ -25,13 +25,19 @@ return response.json();
 })
 .then((data) => {
 // render to index
-document.getElementsByTagName("div")[25].innerHTML = data.num_dns_queries;
-document.getElementsByTagName("div")[34].innerHTML = data.num_blocked_filtering;
-document.getElementsByTagName("span")[2].innerHTML = data.num_dns_queries;
-document.getElementsByTagName("span")[3].innerHTML = data.num_blocked_filtering;
+document.getElementsByTagName("div")[25].innerHTML = numFormat(data.num_dns_queries);
+document.getElementsByTagName("div")[34].innerHTML = numFormat(data.num_blocked_filtering);
+document.getElementsByTagName("span")[2].innerHTML = numFormat(data.num_dns_queries);
+document.getElementsByTagName("span")[3].innerHTML = numFormat(data.num_blocked_filtering);
+
 })
 .catch((error) => {
 console.error('Error:', error);
 });
+
+}
+
+function numFormat(num) {
+return num.toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 }
 })();
