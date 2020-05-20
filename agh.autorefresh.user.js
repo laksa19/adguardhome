@@ -27,8 +27,13 @@ return response.json();
 // render to index
 document.getElementsByTagName("div")[25].innerHTML = numFormat(data.num_dns_queries);
 document.getElementsByTagName("div")[34].innerHTML = numFormat(data.num_blocked_filtering);
+document.getElementsByTagName("div")[44].innerHTML = numFormat(data.num_replaced_safebrowsing);
+document.getElementsByTagName("div")[54].innerHTML = numFormat(data.num_replaced_parental);
 document.getElementsByTagName("span")[2].innerHTML = numFormat(data.num_dns_queries);
 document.getElementsByTagName("span")[3].innerHTML = numFormat(data.num_blocked_filtering);
+document.getElementsByTagName("span")[4].innerHTML = numFormat(data.num_replaced_safebrowsing);
+document.getElementsByTagName("span")[5].innerHTML = numFormat(data.num_replaced_parental);
+document.getElementsByTagName("span")[6].innerHTML = numFormat(data.num_replaced_safesearch);
 
 })
 .catch((error) => {
